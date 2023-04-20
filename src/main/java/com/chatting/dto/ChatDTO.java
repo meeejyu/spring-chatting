@@ -25,5 +25,5 @@ public class ChatDTO {
 
     @Setter
     private String message; // 메시지
-    private String time; // 채팅 발송 시간간
+    private String time; // 채팅 발송 시간
 }

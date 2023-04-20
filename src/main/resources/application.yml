@@ -1,0 +1,7 @@
+spring:  
+    mvc:
+        view:
+            suffix: .html
+    thymeleaf: 
+        cache: false
+
