@@ -31,6 +31,7 @@
         font-weight: bold;
     }
     content {
+        overflow-y: scroll;
         display: block;
         height: 500px;
     }
@@ -41,12 +42,6 @@
         border-bottom: 1px solid #adadad;
         padding: 10px 20px;
         /* margin-bottom: 10px; */
-    }
-    content ul li:last-child{
-        /* margin-bottom: 0px; */
-    }
-    content ul li h2{
-        /* font-size: 30px; */
     }
     content ul li div{
         display: flex;
@@ -74,15 +69,18 @@
     <container>
         <header>
             <div class="title">
-                <h2>나의 채팅방</h2>
-            </div>
-            <div class="head-tool">
-                <button type="button" class="btn btn-primary">채팅방 생성</button>
-                <button type="button" class="btn btn-danger">채팅방 삭제</button>
+                <h2>친구 리스트</h2>
             </div>
         </header>
         <content>
             <ul>
+                <li>
+                    <div th:text="${#strings.substring(member.memberName,0,2)}"></div>
+                    <h5 th:text="${member.memberMessage}"></h5>
+                </li>
+                <li>
+                    <h5 th:text="'친구 수 : ' +${chatList.size}"></h5>
+                </li>
                 <li th:each="chat : ${chatList}">
                     <div th:text="${#strings.substring(chat.chatSender,0,2)}"></div>
                     <h5 th:text="${chat.chatMessage}"></h5>
@@ -90,7 +88,7 @@
             </ul>
         </content>
         <footer>
-            <a href="/friend" class="btn btn-success">친구목록</a>
+            <a href="/chat" class="btn btn-success">채팅방</a>
             <a href="/logout" class="btn btn-warning">로그아웃</a>
         </footer>
     </container>

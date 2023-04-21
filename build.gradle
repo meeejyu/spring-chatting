@@ -24,6 +24,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	// MariaDB JDBC driver
+    implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.4'
+    
+    // Spring Data JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
 	// sockjs
 	implementation 'org.webjars:sockjs-client:1.5.1'
